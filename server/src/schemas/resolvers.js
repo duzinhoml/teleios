@@ -28,7 +28,7 @@ const resolvers = {
                 input.password = input.password.trim()
 
                 // Username
-                const userUsername = await User.findOne({ username: input.username })
+                const userUsername = await User.findOne({ username: input.username });
                 if (userUsername) {
                     throw new Error('Username already exists.');
                 }
@@ -42,7 +42,7 @@ const resolvers = {
                 throw new Error(`${err.message}`);
             }
         },
-        login: async (_, { username, password }) => {
+        login: async (_, { username }) => {
             const user = await User.findOne({ username });
             if (!user) {
                 throw new AuthenticationError('User not found. Please check your username or create a new account.');

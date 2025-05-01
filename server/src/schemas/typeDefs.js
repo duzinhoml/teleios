@@ -33,7 +33,7 @@ const typeDefs = `
         createUser(input: CreateUserInput): Auth
         login(username: String!, password: String!): Auth
 
-        updateUser(input: UpdateUserInput): User
+        updateUser(input: UpdateUserInput!): User
 
         deleteUserById(userId: ID!): String
     }
